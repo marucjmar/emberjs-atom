@@ -15,6 +15,14 @@
       }
     }
   },
+  "keywords": [
+    "ember",
+    "ember pods",
+    "cli",
+    "emberjs",
+    "autocomplete",
+    "snippets"
+  ],
   "devDependencies": {
     "request": "^2.53.0",
     "temp": "^0.8.1"
