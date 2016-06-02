@@ -10,4 +10,8 @@ $("#methods").children().each(function(object){
 
 JSON.stringify(methods)
 
-x = this.get('asdsa').mapBy("asd")
+this.render('asdsa',{
+
+})
+
+this.get('asd')
