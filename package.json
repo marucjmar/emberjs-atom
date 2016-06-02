@@ -1,6 +1,6 @@
 {
   "name": "emberjs-atom",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Atom autocompletions, snippets for emberjs",
   "main": "./lib/main",
   "license": "MIT",
