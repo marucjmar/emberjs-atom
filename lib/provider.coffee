@@ -1,7 +1,7 @@
 fs = require 'fs'
 path = require 'path'
 
-propertyPrefixPattern = /(?:^|\[|\(|,|=|:|\s)\s*((Ember|atom|this|:)\.(?:[a-zA-Z]+\.?){0,2})$/
+propertyPrefixPattern = /(?:^|\[|\(|,|=|:|\s)\s*((Ember|this|\))\.(?:[a-zA-Z]+\.?){0,2})$/
 
 module.exports =
   selector: '.source.coffee, .source.js'
@@ -66,14 +66,22 @@ module.exports =
   getCompletions: (line) ->
     completions = []
     match =  propertyPrefixPattern.exec(line)?[1]
+
+    if !match && line.indexOf('.') > 0
+      x = line.split('.')
+      for completion in @completions['functions'] when not prefix or firstCharsEqual(completion.name, x[x.length - 1])
+        completions.push(clone(completion))
+      return completions
+
     return completions unless match
+
+
     segments = match.split('.')
     prefix = segments.pop() ? ''
     segments = segments.filter (segment) -> segment
     property = segments[segments.length - 1]
 
     propertyCompletions = @completions[@ember_class][property] ? []
-    console.log(propertyCompletions)
 
     for completion in propertyCompletions when not prefix or firstCharsEqual(completion.name, prefix)
       completions.push(clone(completion))

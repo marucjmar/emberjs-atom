@@ -10,4 +10,4 @@ $("#methods").children().each(function(object){
 
 JSON.stringify(methods)
 
-asd: Ember.computed.alias('asd')
+x= this.get('asdsa').findBy("asdsa",asd)
