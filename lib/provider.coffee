@@ -71,7 +71,7 @@ module.exports =
       return completions
 
     return completions unless match
-
+    return completions unless @ember_class
 
     segments = match.split('.')
     prefix = segments.pop() ? ''
