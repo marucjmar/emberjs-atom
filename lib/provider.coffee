@@ -66,7 +66,7 @@ module.exports =
   getCompletions: (line) ->
     completions = []
     match =  propertyPrefixPattern.exec(line)?[1]
-
+    console.log(line)
     if !match && line.indexOf('.') > 0
       x = line.split('.')
       for completion in @completions['functions'] when not prefix or firstCharsEqual(completion.name, x[x.length - 1])

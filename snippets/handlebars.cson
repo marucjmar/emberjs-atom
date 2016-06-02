@@ -146,7 +146,7 @@
   'Handlebars: Action':
     'prefix': 'action'
     'body': """
-      {{action '{1:actionName}'' {2:args} }}
+      {{action '${1:actionName}' ${2:args} }}
     """
 
   'Handlebars: Concat':
