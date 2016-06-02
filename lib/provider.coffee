@@ -4,16 +4,14 @@ path = require 'path'
 propertyPrefixPattern = /(?:^|\[|\(|,|=|:|\s)\s*((Ember|this|\))\.(?:[a-zA-Z]+\.?){0,2})$/
 
 module.exports =
-  selector: '.source.coffee, .source.js'
+  selector: '.source.js'
   filterSuggestions: true
 
   getSuggestions: ({bufferPosition, editor}) ->
-    return unless @isEditingAnAtomPackageFile(editor)
     line = editor.getTextInRange([[bufferPosition.row, 0], bufferPosition])
     folder_parent_name = editor.getPath().match("(controllers|routes)")?[0]
     if folder_parent_name
       @ember_class  = folder_parent_name.slice(0,folder_parent_name.length - 1)
-
 
     @getCompletions(line)
 
