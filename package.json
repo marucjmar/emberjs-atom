@@ -1,10 +1,10 @@
 {
-  "name": "atom-ember",
+  "name": "emberjs-atom",
   "version": "0.0.1",
   "description": "Atom autocompletions, snippets for emberjs",
   "main": "./lib/main",
   "license": "MIT",
-  "repository": "https://github.com/atom/autocomplete-atom-api",
+  "repository": "https://github.com/marucjmar18/emberjs-atom",
   "engines": {
     "atom": ">=0.174.0 <2.0.0"
   },
