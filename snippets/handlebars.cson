@@ -20,18 +20,18 @@
   'Handlebars: Each':
     'prefix': 'each'
     'body': """
-      {{#each ${1:colleaction} as |${2:item}|}}
-        ${3: code :)}
+      {{#each ${1:collection} as |${2:item}|}}
+        ${3: code}
       {{/each}}
     """
 
   'Handlebars: Each/Else':
     'prefix': 'eachelse'
     'body': """
-      {{#each ${1:colleaction} as |${2:item}|}}
-        ${3: code :)}
+      {{#each ${1:collection} as |${2:item}|}}
+        ${3: code}
       {{else}}
-        ${4: code :)}
+        ${4: code}
       {{/each}}
     """
 
